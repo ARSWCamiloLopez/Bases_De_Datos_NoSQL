@@ -1,4 +1,3 @@
 # Parcial 2 ARSW
 
-[![Deploy to Heroku](https://arws-2-parcial.herokuapp.com/)
-
+Heroku link: https://arws-2-parcial.herokuapp.com
