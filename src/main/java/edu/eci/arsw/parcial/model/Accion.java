@@ -5,60 +5,36 @@
  */
 package edu.eci.arsw.parcial.model;
 
+import org.springframework.data.annotation.Id;
+
 /**
  *
  * @author camilolopez
  */
 public class Accion {
 
-    String open, high, low, close, volume;
+    @Id
+    public String id;
 
-    public Accion(String open, String high, String low, String close, String volume) {
-        this.open = open;
-        this.high = high;
-        this.low = low;
-        this.close = close;
-        this.volume = volume;
+    public String stringAccion;
+
+    public Accion() {
     }
 
-    public String getOpen() {
-        return open;
+    public Accion(String stringAccion) {
+        this.stringAccion = stringAccion;
     }
 
-    public void setOpen(String open) {
-        this.open = open;
+    public String getStringAccion() {
+        return stringAccion;
     }
 
-    public String getHigh() {
-        return high;
+    public void setStringAccion(String stringAccion) {
+        this.stringAccion = stringAccion;
     }
 
-    public void setHigh(String high) {
-        this.high = high;
+    @Override
+    public String toString() {
+        return "Accion: " + stringAccion;
     }
-
-    public String getLow() {
-        return low;
-    }
-
-    public void setLow(String low) {
-        this.low = low;
-    }
-
-    public String getClose() {
-        return close;
-    }
-
-    public void setClose(String close) {
-        this.close = close;
-    }
-
-    public String getVolume() {
-        return volume;
-    }
-
-    public void setVolume(String volume) {
-        this.volume = volume;
-    }
-
 }

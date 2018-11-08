@@ -5,6 +5,7 @@
  */
 package edu.eci.arsw.parcial.model;
 
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -12,5 +13,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author camilo
  */
 public interface AccionRepository extends MongoRepository<Accion, String>{
+    
+    public Accion getSharePerName(String shareName);
     
 }

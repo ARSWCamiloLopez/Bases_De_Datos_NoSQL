@@ -16,6 +16,8 @@
 package edu.eci.arsw.parcial;
 
 import edu.eci.arsw.parcial.model.AccionRepository;
+import edu.eci.arsw.parcial.controller.ParcialAPIController;
+import edu.eci.arsw.parcial.model.Accion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +28,9 @@ public class ParcialapiDemoApplication implements CommandLineRunner {
 
     @Autowired
     AccionRepository repository;
+    
+    @Autowired
+    ParcialAPIController pServices;
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(ParcialapiDemoApplication.class, args);
@@ -34,6 +39,14 @@ public class ParcialapiDemoApplication implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         repository.deleteAll();
+        
+        //Save MSFT daily shares
+        repository.save(new Accion((String) pServices.obtenerAccionesDiarias("MSFT").getBody()));
+        repository.save(new Accion((String) pServices.obtenerAccionesDiarias("FB").getBody()));
+        
+        for(Accion x : repository.findAll()){
+            System.out.println(x);   
+        }
     }
 
 }
