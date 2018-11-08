@@ -15,14 +15,25 @@
  */
 package edu.eci.arsw.parcial;
 
+import edu.eci.arsw.parcial.model.AccionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ParcialapiDemoApplication {
+public class ParcialapiDemoApplication implements CommandLineRunner {
+
+    @Autowired
+    AccionRepository repository;
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(ParcialapiDemoApplication.class, args);
+    }
+
+    @Override
+    public void run(String... strings) throws Exception {
+        repository.deleteAll();
     }
 
 }
