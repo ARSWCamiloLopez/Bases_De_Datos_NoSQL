@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.arsw.parcial.controller;
+package edu.eci.arsw.nosql.controller;
 
-import edu.eci.arsw.parcial.services.ParcialServices;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
-import edu.eci.arsw.parcial.model.Accion;
+import edu.eci.arsw.nosql.model.Accion;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import edu.eci.arsw.nosql.services.NoSQLServices;
 
 /**
  *
@@ -28,10 +28,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/acciones")
 @Service
-public class ParcialAPIController {
+public class NoSQLAPIController {
 
     @Autowired
-    ParcialServices pServices;
+    NoSQLServices pServices;
 
     /**
      *

@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.arsw.parcial.model;
-
+package edu.eci.arsw.nosql.model;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -14,6 +13,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface AccionRepository extends MongoRepository<Accion, String>{
     
-    public Accion getSharePerName(String shareName);
+    /**
+     *
+     * @param nombreAccion
+     * @return
+     */
+    public Accion findBynombreAccion(String nombreAccion);    
     
 }

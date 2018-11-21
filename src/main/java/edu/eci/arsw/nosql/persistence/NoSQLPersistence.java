@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.arsw.parcial.services;
+package edu.eci.arsw.nosql.persistence;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import java.io.IOException;
  *
  * @author camilolopez
  */
-public interface ParcialServices {
+public interface NoSQLPersistence {
 
     /**
      *
@@ -20,29 +20,29 @@ public interface ParcialServices {
      * @return
      * @throws java.io.IOException
      */
-    public String obtenerAccionesIntradia(String identificador) throws IOException;
-    
+    public String obtenerAccionesIntraDia(String identificador) throws IOException;
+
     /**
      *
      * @param identificador
      * @return
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public String obtenerAccionesDiarias(String identificador) throws IOException;
-    
+
     /**
      *
      * @param identificador
      * @return
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public String obtenerAccionesSemanales(String identificador) throws IOException;
-    
+
     /**
      *
      * @param identificador
      * @return
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public String obtenerAccionesMensuales(String identificador) throws IOException;
 }

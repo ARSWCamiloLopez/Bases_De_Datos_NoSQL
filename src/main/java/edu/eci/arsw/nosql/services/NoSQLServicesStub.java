@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.arsw.parcial.services;
+package edu.eci.arsw.nosql.services;
 
-import edu.eci.arsw.parcial.persistence.ParcialPersistence;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import edu.eci.arsw.nosql.persistence.NoSQLPersistence;
 
 /**
  *
  * @author camilolopez
  */
 @Service
-public class ParcialServicesStub implements ParcialServices {
+public class NoSQLServicesStub implements NoSQLServices {
 
     @Autowired
-    ParcialPersistence pPersis;
+    NoSQLPersistence pPersis;
 
     @Override
     public String obtenerAccionesIntradia(String identificador) throws IOException {
